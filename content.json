@@ -1,0 +1,1809 @@
+{
+ "name": "Johnathon Moore",
+ "tagline": "Mechanical engineering graduate with extensive experience researching and developing biomimetic UAVs. Co-lead of the Avionics subteam in the SMART Hawk senior design project, member of the Morphing Red-Tailed Hawk Taxidermy Research Project at CSUN, and intern at Advanced Photonix, home of innovative photonics and optoelectronic devices.",
+ "contact": [
+  {
+   "label": "Email",
+   "value": "johnathoncymoore@gmail.com"
+  },
+  {
+   "label": "Résumé",
+   "value": "#resume"
+  }
+ ],
+ "papers": {
+  "intro": "Peer-reviewed work, with my role on each paper.",
+  "items": [
+   {
+    "date": "Aug 2026",
+    "kind": "",
+    "title": "Developing a Morphing Taxidermy of a Red-Tailed Hawk",
+    "authors": "P. L. Bishay, E. Ortega, L. Haroutoonian, V. Bures, J. Moore, J. Hogue, F. Hertel",
+    "venue": "Biomimetics 2026, 11, 559",
+    "summary": "The first working morphing taxidermy of a red-tailed hawk, built with the bird's real skin and feathers. New mechanisms let each wing morph independently and give the tail pitch, roll, and feather spread. A fuselage ties every system to the carcass. Multi-cycle actuation tests confirmed the morphing was consistent",
+    "role": "I worked alongside 2 other undergraduate mechanical engineering students and 1 mechanical engineering student pursuing their master's degree. Together, we 3D scanned, dissected, modeled, 3D printed, and assembled the morphing taxidermy. We all worked closely, with my main focus being on the tail. I and one of the other undergraduate students designed and assembled the 3 DOF tail. Additionally, I was responsible for extracting the airfoil geometry from the 3D scans while my peer was responsible for performing the simulations to gather the aerodynamic properties. \nThe avionics were fairly straightforward, consisting of only a 3.7 [V] LiPo battery, 30 [A] ESC, transmitter, receiver, and 5 microservos. However, I and one of the other undergraduate students were in charge of setting all control surfaces, parameters, and trims to ensure the range of motion during actuation accurately represented a real red-tailed hawk.",
+    "tags": [
+     "Biomimetics",
+     "Wing morphing",
+     "Taxidermy"
+    ],
+    "link": "https://doi.org/10.3390/biomimetics11080559"
+   },
+   {
+    "date": "Jun 2026",
+    "kind": "",
+    "title": "SMART Hawk: A Shape-Morphing Artificial Red-Tailed Hawk",
+    "authors": "P. L. Bishay, L. Haroutoonian, V. Bures, C. Wilmarth, C. Rubinstein, et al. (18 authors)",
+    "venue": "Engineering Proceedings 2026, 142, 2 · IOCAE 2026",
+    "summary": "A non-flapping UAV modeled on the red-tailed hawk, with five morphing degrees of freedom: asymmetric wing tucking plus tail pitch, roll, and feather spread. The design was sized in MachUpX, refined with CFD in ANSYS Fluent, built from composite, wood, and 3D-printed parts, and flown in multiple prototype flight tests.",
+    "role": "I was the Smart Morphing Wing **10th cohort** avionics subteam co-lead. My subteam and I were responsible for all avionics, flight tests, and data collection. We conducted thrust testing to determine an appropriate propulsion system capable of supplying sufficient thrust given our weight limit. Additionally, we established an appropriate flight controller for our requirements (PWM outputs, GPS, compass, airspeed sensor), microservos with sufficient torque while remaining light in weight. \nWe performed multiple flight tests with an iterative approach.\n     1) A completely traditional RC plane, including ailerons, a rudder, and an elevator to act as a  benchmark for our avionics system. \n      2) Traditional wings with ailerons and our morphing tail, to gather data on the authority and effectiveness of our tail design\n     3) Morphing wings with a traditional tail (rudder + elevator), to gather data on our morphing wings design\n      4) A full morphing mode consisting of the morphing wings and morphing tail, achieving a 10-second flight time. We came to the conclusion that our design did not generate enough lift for a sustaned, indefinite flight.\nI was also very involved in the design process, particularly in the creation of the morphing tail. I worked closely with design, including 3D modeling, FEA studies (static, frequency, nonlinear), prototyping, and assembly.",
+    "tags": [
+     "UAV",
+     "Morphing wings",
+     "CFD"
+    ],
+    "link": "https://doi.org/10.3390/engproc2026142002"
+   }
+  ]
+ },
+ "senior": {
+  "title": "SMART Hawk",
+  "intro": "The Shape Morphing Artificial Red-Tailed Hawk (SMART Hawk) is an ambitious project to recreate the flight characteristics of one of nature's most efficient avian species. A UAV that can implement control surfaces unique to a red-tailed hawk's flight patterns would achieve high maneuverability and high efficiency while reaching speeds of up to 20 miles per hour. The SMART Hawk consists of 5 degrees of freedom (DOF), including asymmetric wing expansion, wing tucking, tail roll, tail pitch, and tail feather expansion and contraction. As the Avionics subteam co-lead, my responsibilities included specifying a propulsion system to meet the required thrust-to-weight ratio; selecting, mapping, and trimming all servomotors for each control surface; and navigating the software (Mission Planner & ArduPilot) to ensure the unconventional control surfaces met the pilot's needs. Additionally, I was heavily involved in SMART Hawk's design and manufacturing, from conceptualization through final assembly, especially in the creation of the morphing tail.",
+  "compareIntro": "Drag the handle to compare the design model with the finished prototype.",
+  "specs": [
+   {
+    "label": "Wingspan",
+    "value": "1.21 m"
+   },
+   {
+    "label": "Prototype mass",
+    "value": "1.67 kg"
+   },
+   {
+    "label": "Morphing DOF",
+    "value": "5"
+   },
+   {
+    "label": "Wing area reduction",
+    "value": "22.5%"
+   },
+   {
+    "label": "Tail spread",
+    "value": "80°–120°"
+   },
+   {
+    "label": "Tail area change",
+    "value": "45%"
+   },
+   {
+    "label": "Cruise speed",
+    "value": "10 m/s"
+   },
+   {
+    "label": "Reynolds number",
+    "value": "2.0 × 10⁵"
+   },
+   {
+    "label": "Lift (CFD, 5° AOA)",
+    "value": "14.7 N"
+   },
+   {
+    "label": "L/D (CFD)",
+    "value": "≈ 12"
+   },
+   {
+    "label": "Thrust-to-weight",
+    "value": "1.2 : 1"
+   }
+  ],
+  "parts": {
+   "wingR": {
+    "name": "Right Wing Covers",
+    "text": "Manufactured using 3 plies of carbon fiber in a prepreg process\nPrimary 3D printed molds were used to create [[secondary molds made of fiberglass|figCoverMolds]] in a wet layup process\nThe secondary fiberglass molds were used during wing cover manufacturing to achieve the desired shape\nThe [[wing covers|figWingCovers]] were introduced to increase aerodynamic efficiency, mitigating flow separation between the bone structure & the feathers"
+   },
+   "wingL": {
+    "name": "Left Wing Covers",
+    "text": "Manufactured using 3 plies of carbon fiber in a prepreg process\nPrimary 3D printed molds were used to create [[secondary molds made of fiberglass|figCoverMolds]] in a wet layup process\nThe secondary fiberglass molds were used during wing cover manufacturing to achieve the desired shape\nThe [[wing covers|figWingCovers]] were introduced to increase aerodynamic efficiency, mitigating flow separation between the bone structure & the feathers"
+   },
+   "feathersR": {
+    "name": "Right Wing Feathers",
+    "text": "13 carbon fiber wings manufactured using a [[prepreg process|figFeatherLayup]]\n    8 on the ulna, 5 on the metacarpus \n    9 fixed feathers, 4 free feathers at the joint to ensure smooth wing tucking\nThe curved geometry ensures more efficient lift generation during flight\n    [[3D scans of a real red-tailed hawk|figRthScan]] airfoil were used to obtain its [[airfoil|figAirfoil]]\n[[2 layers of carbon fiber sandwiching an aluminum rod|figFeatherRod]], acting as the calamus and mounting point\nAll feathers are connected using orthodontic rubber bands so the feathers respond during asymmetric tucking & expanding"
+   },
+   "feathersL": {
+    "name": "Left Wing Feathers",
+    "text": "13 carbon fiber wings manufactured using a [[prepreg process|figFeatherLayup]]\n    8 on the ulna, 5 on the metacarpus \n    9 fixed feathers, 4 free feathers at the joint to ensure smooth wing tucking\nThe curved geometry ensures more efficient lift generation during flight\n    [[3D scans of a real red-tailed hawk|figRthScan]] airfoil were used to obtain its [[airfoil|figAirfoil]]\n[[2 layers of carbon fiber sandwiching an aluminum rod|figFeatherRod]], acting as the calamus and mounting point\nAll feathers are connected using orthodontic rubber bands so the feathers respond during asymmetric tucking & expanding"
+   },
+   "innerWing": {
+    "name": "Fixed Inner Wing Structure",
+    "text": "Fixed inner wing mounted on the fuselage.\nManufactured using [[balsa and basswood ribs and stringers|figInnerWing]]\nRSG32 airfoil cutouts along the width, all connected together using carbon fiber spars and curved balsawood strips along the length\nHouses the asymmetric wing tucking servomotors\nEnsures [[greater aerodynamic efficiency|figCfd]] with its continuous airfoil shape"
+   },
+   "humerus": {
+    "name": "Humerus",
+    "text": "Fixed PLA-CF bone that spans the inner wing and houses both MKS HV6150H tuck servos."
+   },
+   "body": {
+    "name": "Fuselage",
+    "text": "Manufactured out of foamboard for low weight and rapid prototyping\nIncludes an [[airfoil cutout|figFuselage]] where the wings sit, guiding airflow onto the top of the wing\nHouses all avionics and both wing-tucking servos."
+   },
+   "servoR": {
+    "name": "Right Asymmetric Tucking Servomotor",
+    "text": "MKS HV6150h housed in the humerus for wing tucking actuation\nServohorn is connected to a 3-bar linkage system, [[extending and contracting the radius, ulna, and metacarpus|figWingTuck]]"
+   },
+   "servoL": {
+    "name": "Left Asymmetric Tucking Servomotor",
+    "text": "MKS HV6150h housed in the humerus for wing tucking actuation\nServohorn is connected to a 3-bar linkage system, [[extending and contracting the radius, ulna, and metacarpus|figWingTuck]]"
+   },
+   "tailFeathers": {
+    "name": "Tail",
+    "text": "Manufactured by laser cutting 2 [mm] balsa wood and attaching a 2 [mm] carbon fiber rod to each feather. A single-ply carbon fiber patch bonded to the balsawood using epoxy resin via a [[wet layup process|figTailWet]]\nComposed of [[8 moving feathers and 1 fixed feather|figTailDesign]].\nVertical stabilizer included to provide yaw stability during flight"
+   },
+   "tailMech": {
+    "name": "Tail Actutation",
+    "text": "[[Pitch|figTailPitch]]: MKS HV6150H microservo controls a 4-bar linkage system\n[[Roll|figTailRoll]]: DS-843MG microservo within fuselage is connected directly to a carbon fiber rod which connected directly to pitching hinge on the tail\nTail Feather Expansion & Contraction: Guitar wire is pathed to the 2 outermost feathers and pulled by a DS-843MG microservo. Each subsequent feather is connected via orthodontic rubber bands, moving all feathers in one motion."
+   },
+   "motor": {
+    "name": "Propulsion System",
+    "text": "E-flight Power 25 (1250 KV) motor & 11 x 5.5 propeller yields a 1.2:1 [[Thrust-to-Weight ratio|figThrust]]\nMounted to fuselage via 3D printed mounting bracket & wooden dowel"
+   },
+   "av85": {
+    "name": "Servomotor Bracket",
+    "text": "3D printed bracket, screwed onto the carbon fiber twist rod\nHouses the tail pitching MKS HV6150H \nHouses the tail feather expansion & contraction DS843-MG"
+   },
+   "av81": {
+    "name": "Twisting Bracket",
+    "text": "3D printed bracket to stiffen fuselage & mount tail rolling servomotor"
+   },
+   "av79": {
+    "name": "Back Wing Mount",
+    "text": "3D printed mount to secure the back of the wings to the fuselage"
+   },
+   "av73": {
+    "name": "Wing Mount Coupler",
+    "text": "3D printed coupler attached to the exterior of the fuselage.\nA dowel runs through the wing mount, through the fuselage, out the wing mount coupler, which is tightened using a nut & bolt"
+   },
+   "av106": {
+    "name": "Wing Mount Coupler",
+    "text": "3D printed coupler attached to the exterior of the fuselage.\nA dowel runs through the wing mount, through the fuselage, out the wing mount coupler, which is tightened using a nut & bolt"
+   },
+   "av88": {
+    "name": "Tail Feather Expansion & Contraction Servomotor",
+    "text": "The DS 843MG servomotor responsible for tail feather expansion & contraction. \nThe guitar wire is fed through a wire holster on the servo horn"
+   },
+   "av86": {
+    "name": "Tail Pitching Servomotor",
+    "text": "The MKS HV6150H responsible for tail pitch. \nA steel pushrod connects from the servohorn to the tail feather bracket\nHoused within the servomotor bracket"
+   },
+   "av91": {
+    "name": "Tail Roll DS843-MG Servomotor",
+    "text": "Servomotor responsible for rolling the tail\nThe servomotor is connected directly to the twisting bracket\nA carbon fiber rod (referred to as twist rod) is connected to the servohorn at one end and the pitching hinge at the other"
+   },
+   "av90": {
+    "name": "Tail Roll Adapter Piece",
+    "text": "3D printed piece attached directly to the tail roll servo horn\nThe carbon fiber twist rod inserts directly into the adapter piece"
+   },
+   "av84": {
+    "name": "Tail Feather Expansion & Contraction Wire Holster",
+    "text": "Steel component in which the guitar wire is fed through and clamped down using an M3 screw"
+   }
+  },
+  "photo": {
+   "src": "media/smart-hawk-me.jpg",
+   "caption": "Taken at the American Institute of Aeronautics and Astronautics (AIAA) Conference",
+   "video": false
+  },
+  "photo2": {
+   "src": "media/smw10-avionics-team.jpg",
+   "caption": "10th Cohort avionics subteam",
+   "fit": "contain"
+  }
+ },
+ "internship": {
+  "items": [
+   {
+    "dates": "Jan 2025 - Dec 2026",
+    "role": "Mechanical Engineering Intern",
+    "company": "Advanced Photonix",
+    "location": "Camarillo, California",
+    "tags": [
+     "Test automation",
+     "Python",
+     "GRBL",
+     "G-code",
+     "Stepper motors",
+     "Motion control",
+     "Arduino",
+     "TEC temperature control",
+     "Oscilloscope",
+     "Digital multimeter"
+    ],
+    "intro": "Hands-on mechanical engineering internship focused on building and automating test fixtures for in-house products. I also test in-house products to ensure they meet the required specifications before shipping them to customers.",
+    "sections": [
+     {
+      "heading": "Automated Test Station",
+      "text": "Converting the manual testing setup for a mass-produced in-house product to an automated setup to increase efficiency & ship more products faster, increasing company profits.\nHolds each unit under test at temperature with a thermoelectric cooler (TEC) driven by an Arduino Nano.\nAutomated communication with an oscilloscope & digital multimeter to measure current, voltage & other parameters using custom software I built in Python.",
+      "kicker": "Current project"
+     },
+     {
+      "heading": "Motorized XYZ Test Stage",
+      "text": "Developed a [[Python GUI|figInGui]] to control a GRBL-driven [[XYZ motorized stage|figInXy]] with microstep drivers\n  Jog increments of 0.5, 1, 10 & 50 [mm] along each axis, with a one-click homing routine\n  Each button press is sent to the controller as a G-code command\nIntegrated a [[joystick|figInJoy]] for real-time manual positioning of the stage\n  Control box houses the joystick & an [[emergency stop|figInEstop]] for safe operation\nHand-soldered the stage's [[control board|figInBoard]] & wired the [[control enclosure|figInBox]]\n  Two Arduino Nanos, a relay & a voltage regulator on perfboard, with [[point-to-point wiring|figInBoardBack]] on the back\n  Enclosure houses the power supply & stepper drivers\nTuned GRBL motion parameters (steps/mm, max rate & acceleration) for each axis",
+      "kicker": "Previous project",
+      "media": {
+       "flow": [
+        {
+         "lane": "Software",
+         "nodes": [
+          "Python GUI",
+          "GRBL Control Nano",
+          "X · Y · Z drivers",
+          "Stage"
+         ],
+         "links": [
+          "G-code · USB",
+          "step / dir",
+          ""
+         ]
+        },
+        {
+         "lane": "Manual",
+         "nodes": [
+          "Joystick",
+          "Relay Control Nano",
+          "Relay: jog speeds ↔ GRBL mode"
+         ],
+         "links": [
+          "",
+          ""
+         ]
+        },
+        {
+         "lane": "Safety",
+         "nodes": [
+          "E-stop",
+          "Control board"
+         ],
+         "links": [
+          ""
+         ]
+        }
+       ],
+       "reel": [
+        "figInGui",
+        "figInXy",
+        "figInJoy",
+        "figInEstop"
+       ],
+       "board": {
+        "src": "media/intern-board-hero.jpg",
+        "full": "figInBoard",
+        "callouts": [
+         {
+          "label": "Relay Control Nano",
+          "sub": "Switches the mode relay",
+          "x": 0.258,
+          "y": 0.266,
+          "side": "l",
+          "ly": 0.2
+         },
+         {
+          "label": "E-Stop connector",
+          "sub": "Emergency stop input",
+          "x": 0.175,
+          "y": 0.47,
+          "side": "l",
+          "ly": 0.45
+         },
+         {
+          "label": "Voltage regulator",
+          "sub": "Regulated supply for the board",
+          "x": 0.228,
+          "y": 0.68,
+          "side": "l",
+          "ly": 0.68
+         },
+         {
+          "label": "Joystick connector",
+          "sub": "Manual jog input\n  Press once → GRBL mode\n  Press twice → coarse continuous movement\n  Press three times → fine continuous movement",
+          "x": 0.407,
+          "y": 0.229,
+          "side": "r",
+          "ly": 0.11
+         },
+         {
+          "label": "GRBL Control Nano",
+          "sub": "Runs GRBL & turns G-Code into step signals",
+          "x": 0.685,
+          "y": 0.295,
+          "side": "r",
+          "ly": 0.37
+         },
+         {
+          "label": "X, Y, Z control",
+          "sub": "Outputs to the three stepper drivers",
+          "x": 0.407,
+          "y": 0.443,
+          "side": "r",
+          "ly": 0.53
+         },
+         {
+          "label": "Relay",
+          "sub": "Switches between manual jog speeds & GRBL mode",
+          "x": 0.645,
+          "y": 0.68,
+          "side": "r",
+          "ly": 0.72
+         }
+        ]
+       },
+       "strip": [
+        "figInBoardRun",
+        "figInBoardBack",
+        "figInBox"
+       ]
+      }
+     },
+     {
+      "heading": "Fixtures & Lab Hardware",
+      "text": "Design & assemble test fixtures using SolidWorks & 3D printing\nAssemble, wire, solder & troubleshoot electromechanical systems & laboratory hardware\nConduct performance tests on in-house products\nOperate machine shop equipment, including a mill, lathe, band saw, chop saw & drill press",
+      "kicker": "Ongoing"
+     }
+    ]
+   }
+  ]
+ },
+ "projects": {
+  "items": [
+   {
+    "feature": true,
+    "category": "Smart Morphing Wing · 11th Cohort · Avionics Subteam",
+    "title": "SMART Hawk 2.0: Adding VTOL & Payload Systems",
+    "role": "2026–2027 · Avionics subteam of 3 · CSUN · continuing from the 10th Cohort",
+    "intro": "The Smart Morphing Wing 11th cohort (2026-2027) is taking the SMART Hawk to the next level. This next iteration will implement a VTOL system, which will transition to conventional flight, and a payload system, designed with heavy inspiration from the talons of a real red-tailed hawk. The 3-member Avionics subteam is responsible for creating a functional VTOL-to-conventional flight system, choosing all appropriate propulsion components capable of producing the necessary thrust, programming the new flight controller to combine control surfaces via Lua scripting, and working closely with the payload and design subteams to ensure the design goals are met.",
+    "image": "media/smw-front-spar-hd.mp4",
+    "imageFig": "figSmwHero",
+    "figure": "figSmwVtol",
+    "goals": [
+     {
+      "v": "25%",
+      "l": "Wing area change in flight"
+     },
+     {
+      "v": "VTOL",
+      "l": "Vertical takeoff & landing"
+     },
+     {
+      "v": "1 [lb]",
+      "l": "Payload capture with talons"
+     }
+    ],
+    "results": [
+     {
+      "label": "VTOL flight tests",
+      "value": "4"
+     },
+     {
+      "label": "Longest hover",
+      "value": "15 [s]"
+     },
+     {
+      "label": "Thrust-to-weight",
+      "value": "1.5 : 1"
+     },
+     {
+      "label": "Max thrust / motor",
+      "value": "2.58 [lbs]"
+     },
+     {
+      "label": "Front spar tilt",
+      "value": "90°"
+     },
+     {
+      "label": "Rear yaw mount FOS",
+      "value": "58.8"
+     },
+     {
+      "label": "PWM outputs",
+      "value": "12 + 1 spare"
+     },
+     {
+      "label": "Successful takeoffs & landings",
+      "value": "2"
+     }
+    ],
+    "sections": [
+     {
+      "heading": "VTOL Objective",
+      "text": "Designed & built a **T-shaped tricopter** as the avionics test aircraft\n  2 front motors on a servo-tilted carbon fiber spar & 1 rear yaw motor\n  3:4 concentric gear reduction tilts the spar 90° from hover to cruise\n  MATLAB & FEA sized the front spar: 8 [mm] solid or 9 [mm] hollow carbon fiber rod\nRan [[4 VTOL flight tests|figSmwVtol]], with 2 successful takeoffs & landings and a 15 [s] hover\n  Redesigned the [[rear yaw mount|figSmwRearYaw]] & [[front carriage|figSmwCarriage]] for screw-together, modular assembly\n  Rear yaw mount FEA: 0.355 [MPa] max stress & min FOS of 58.8"
+     },
+     {
+      "heading": "Propulsion",
+      "text": "[[Thrust testing|figSmwThrust]] on a load-cell stand selected the TSIDO 2807 1300KV motor\n  2.58 [lbs] max thrust per motor on a 4S battery\n  3 motors give a 1.5:1 thrust-to-weight ratio for a 5 [lb] aircraft\nLoad cell calibration repeatable with R² = 1"
+     },
+     {
+      "heading": "Flight Controller",
+      "text": "Selected the TBS Lucid H7 Wing flight controller for 12 PWM outputs & Lua scripting\n[[Lua script|figSmwLua]] in ArduPilot moves several surfaces from one stick\n  e.g. symmetric wing tuck + tail spread for a dive & recovery\nRepaired the old Matek F405: FTDI serial converter for the broken USB port, re-soldered joints & corrected flight parameters\n[[Next wiring layout|figSmwSchem]] uses a 4-in-1 ESC & lighter motors at about half the weight"
+     },
+     {
+      "heading": "Future Works",
+      "text": "GPS & airspeed sensor for data logging\nOnboard FPV camera for payload capture\nFirst VTOL-to-cruise transition flight"
+     }
+    ],
+    "cadTitle": "VTOL chassis CAD",
+    "cadNote": "Work in progress. Current chassis with the 4S battery, 3 ESCs & their mounts added. Click a part to see what it does.",
+    "imagePoster": "media/smw-front-spar-hd.jpg",
+    "build": {
+     "title": "Built hardware",
+     "note": "The current VTOL chassis system",
+     "views": [
+      {
+       "label": "With wing",
+       "src": "media/vtol-full.jpg",
+       "caption": "Full aircraft with the wing & tail mounted"
+      },
+      {
+       "label": "Chassis",
+       "src": "media/vtol-chassis.jpg",
+       "caption": "Chassis from above, wing off: front VTOL spar, electronics bay & rear yaw motor"
+      },
+      {
+       "label": "Front",
+       "src": "media/vtol-front.jpg",
+       "caption": "VTOL chassis, front three-quarter view"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "letters": {
+  "intro": "Full letters are available on request.",
+  "items": [
+   {
+    "relation": "Research advisor",
+    "name": "Dr. First Last",
+    "title": "Title, Department, University",
+    "excerpt": "A short excerpt from the letter, if they're okay with you sharing it.",
+    "link": ""
+   },
+   {
+    "relation": "Internship manager",
+    "name": "First Last",
+    "title": "Title, Company",
+    "excerpt": "Excerpt.",
+    "link": ""
+   }
+  ]
+ },
+ "media": {
+  "model": "hawk-model.txt",
+  "cadTop": "media/cad-top-2.jpg",
+  "photoTop": "media/phys-top-3.jpg"
+ },
+ "figures": {
+  "figRthScan": {
+   "src": "media/rth-3d-scan.jpg",
+   "caption": "3D scan of a red-tailed hawk",
+   "video": false
+  },
+  "figAirfoil": {
+   "src": "media/airfoil.png",
+   "caption": "Red-tailed hawk feather airfoil (max. thickness t/c = 0.123)",
+   "video": false
+  },
+  "figFeatherRod": {
+   "src": "media/feather-rod.mp4",
+   "caption": "Feather layup: two carbon fiber layers sandwiching an aluminum rod",
+   "video": true
+  },
+  "figTailPitch": {
+   "src": "media/tail-pitch.mp4",
+   "caption": "Tail pitch actuation",
+   "video": true
+  },
+  "figTailRoll": {
+   "src": "media/tail-roll.mp4",
+   "caption": "Tail roll actuation",
+   "video": true
+  },
+  "figAvDiagram": {
+   "src": "media/av-diagram.png",
+   "caption": "SMART Hawk avionics diagram",
+   "video": false
+  },
+  "figTxConfig": {
+   "src": "media/tx-config.png",
+   "caption": "Taranis QX7 transmitter control configuration",
+   "video": false
+  },
+  "figCfd": {
+   "src": "media/paper-cfd.jpg",
+   "caption": "ANSYS CFD model of the SMART Hawk: CAD (a), pressure contours (b–d)",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figInnerWing": {
+   "src": "media/paper-innerwing.jpg",
+   "caption": "Inner wing: balsa & basswood ribs on 8 [mm] & 6 [mm] carbon fiber spars",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figFuselage": {
+   "src": "media/paper-fuselage.jpg",
+   "caption": "Fuselage with motor mount, wing mounts & tail roll brackets",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figWingTuck": {
+   "src": "media/paper-wingtuck.jpg",
+   "caption": "Wing design: (a) extended, (b) tucked (22.5% area reduction)",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figCoverMolds": {
+   "src": "media/paper-covermolds.jpg",
+   "caption": "(a) Wing cover molds, (b) fiberglass secondary molds, (c) carbon fiber wing covers",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figTailDesign": {
+   "src": "media/paper-tail.jpg",
+   "caption": "(a) Tail design, (b) extended tail, (c) tucked tail",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figTailWet": {
+   "src": "media/paper-tailwet.jpg",
+   "caption": "(a) Carbon fiber wet layup on the tail feathers, (b) side view of the tail assembly",
+   "source": "SMART Hawk paper, Eng. Proc. 2026"
+  },
+  "figTaxiScan": {
+   "src": "media/paper-scan.jpg",
+   "caption": "3D scan of the red-tailed hawk: (a) whole model, (b) interior body",
+   "source": "Taxidermy paper, Biomimetics 2026"
+  },
+  "figExtract": {
+   "src": "media/paper-extract.jpg",
+   "caption": "Feather extraction: (a) incision along the wing bones, (b) exposed ulna & radius",
+   "source": "Taxidermy paper, Biomimetics 2026"
+  },
+  "figKinematic": {
+   "src": "media/paper-kinematic.jpg",
+   "caption": "Kinematic diagram of the wing mechanism",
+   "source": "Taxidermy paper, Biomimetics 2026"
+  },
+  "figTailAsm": {
+   "src": "media/paper-tailasm.jpg",
+   "caption": "Tail assembly: (a) CAD model in SOLIDWORKS, (b) fabricated",
+   "source": "Taxidermy paper, Biomimetics 2026"
+  },
+  "figNeck": {
+   "src": "media/paper-neck.jpg",
+   "caption": "(a) Neck structure, (b) skull connector, (c) skull connector attached to the skull",
+   "source": "Taxidermy paper, Biomimetics 2026"
+  },
+  "figWingCovers": {
+   "items": [
+    {
+     "src": "media/wing-covers-1.jpg",
+     "caption": "Physical Wing Cover - Fully Extended",
+     "video": false
+    },
+    {
+     "src": "media/wing-covers-2.jpg",
+     "caption": "Physical Wing Cover - Fully Extended",
+     "video": false
+    }
+   ],
+   "src": "media/wing-covers-1.jpg",
+   "caption": "Physical Wing Cover - Fully Extended"
+  },
+  "figFeatherLayup": {
+   "src": "media/feathers-layup.jpg",
+   "caption": "Finished carbon fiber feathers with their molds"
+  },
+  "figThrust": {
+   "src": "media/thrust-test.jpg",
+   "caption": "Thrust Testing Setup & Software"
+  },
+  "figTaxiWing": {
+   "items": [
+    {
+     "src": "media/taxi-fig19a.jpg",
+     "caption": "Wing extended",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig19b.jpg",
+     "caption": "Wing tucked",
+     "video": false
+    }
+   ],
+   "src": "media/taxi-fig19a.jpg",
+   "caption": "Wing extended"
+  },
+  "figTaxiSpread": {
+   "items": [
+    {
+     "src": "media/taxi-fig20a.jpg",
+     "caption": "Tail fully extended",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig20b.jpg",
+     "caption": "Tail mid-tuck",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig20c.jpg",
+     "caption": "Tail fully tucked",
+     "video": false
+    }
+   ],
+   "src": "media/taxi-fig20a.jpg",
+   "caption": "Tail fully extended"
+  },
+  "figTaxiPitch": {
+   "items": [
+    {
+     "src": "media/taxi-fig21a.jpg",
+     "caption": "No pitch",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig21b.jpg",
+     "caption": "Pitched up 30°",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig21c.jpg",
+     "caption": "Pitched down 30°",
+     "video": false
+    }
+   ],
+   "src": "media/taxi-fig21a.jpg",
+   "caption": "No pitch"
+  },
+  "figTaxiAssembly": {
+   "items": [
+    {
+     "src": "media/taxi-fig16a.jpg",
+     "caption": "Full assembly in SolidWorks",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig16b.jpg",
+     "caption": "Fabricated assembly",
+     "video": false
+    }
+   ],
+   "src": "media/taxi-fig16a.jpg",
+   "caption": "Full assembly in SolidWorks"
+  },
+  "figTaxiFull": {
+   "items": [
+    {
+     "src": "media/taxi-fig22c.jpg",
+     "caption": "Full prototype with wings and tail extended",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig22a.jpg",
+     "caption": "Wings extended, tail tucked",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig22b.jpg",
+     "caption": "Wings tucked, tail tucked",
+     "video": false
+    },
+    {
+     "src": "media/taxi-fig22d.jpg",
+     "caption": "Wings tucked, tail extended",
+     "video": false
+    }
+   ],
+   "src": "media/taxi-fig22c.jpg",
+   "caption": "Full prototype with wings and tail extended"
+  },
+  "figInJoy": {
+   "src": "media/intern-joystick.mp4",
+   "caption": "Joystick driving continuous movement of the XY stage",
+   "poster": "media/intern-joystick.jpg",
+   "video": true
+  },
+  "figInGui": {
+   "src": "media/intern-gui-b.mp4",
+   "caption": "Python GUI sending G-Code to jog the XY stage in 50 [mm] increments",
+   "poster": "media/intern-gui-b.jpg",
+   "video": true
+  },
+  "figInXy": {
+   "src": "media/intern-xy.mp4",
+   "caption": "Python GUI jogging the Z-axis",
+   "poster": "media/intern-xy.jpg",
+   "video": true
+  },
+  "figInEstop": {
+   "src": "media/intern-estop.jpg",
+   "caption": "Control box with the E-Stop button & joystick"
+  },
+  "figSmwVtol": {
+   "items": [
+    {
+     "src": "media/smw-vtol4.mp4",
+     "poster": "media/smw-vtol4.jpg",
+     "caption": "VTOL Test #4: 15 [s] hover",
+     "video": true
+    },
+    {
+     "src": "media/smw-vtol3.mp4",
+     "poster": "media/smw-vtol3.jpg",
+     "caption": "VTOL Test #3: takeoff & landing",
+     "video": true
+    }
+   ],
+   "src": "media/smw-vtol4.mp4",
+   "caption": "VTOL Test #4: 15 [s] hover"
+  },
+  "figSmwLua": {
+   "items": [
+    {
+     "src": "media/smw-lua.mp4",
+     "poster": "media/smw-lua.jpg",
+     "caption": "Lua script on the flight controller driving 5 servos from shared transmitter inputs",
+     "video": true
+    }
+   ],
+   "src": "media/smw-lua.mp4",
+   "caption": "Lua script on the flight controller driving 5 servos from shared transmitter inputs"
+  },
+  "figSmwSchem": {
+   "items": [
+    {
+     "src": "media/smw-schem-now.jpg",
+     "caption": "Current wiring: Matek F405, 30 [A] ESCs & power splitter"
+    },
+    {
+     "src": "media/smw-schem-next.jpg",
+     "caption": "Next wiring: TBS Lucid H7 Wing & 4-in-1 ESC, about half the weight"
+    }
+   ],
+   "src": "media/smw-schem-now.jpg",
+   "caption": "Current wiring: Matek F405, 30 [A] ESCs & power splitter"
+  },
+  "figSmwThrust": {
+   "items": [
+    {
+     "src": "media/smw-thrust-setup.jpg",
+     "caption": "Thrust test stand: 5 [kg] load cell, Arduino Nano & DAQ"
+    },
+    {
+     "src": "media/smw-thrust-data.jpg",
+     "caption": "2215 KV motor thrust vs. time for 3 propellers"
+    },
+    {
+     "src": "media/smw-thrust-cal.jpg",
+     "caption": "Load cell calibration, R² = 1"
+    }
+   ],
+   "src": "media/smw-thrust-setup.jpg",
+   "caption": "Thrust test stand: 5 [kg] load cell, Arduino Nano & DAQ"
+  },
+  "figSmwRearYaw": {
+   "items": [
+    {
+     "src": "media/smw-rearyaw.mp4",
+     "poster": "media/smw-rearyaw.jpg",
+     "caption": "Improved rear yaw actuation",
+     "video": true
+    },
+    {
+     "src": "media/smw-rearyaw-cad.mp4",
+     "poster": "media/smw-rearyaw-cad.jpg",
+     "caption": "Rear yaw mount CAD",
+     "video": true
+    },
+    {
+     "src": "media/smw-rearyaw-fea.jpg",
+     "caption": "Rear yaw motor mount FEA: 0.355 [MPa] max stress"
+    }
+   ],
+   "src": "media/smw-rearyaw.mp4",
+   "caption": "Improved rear yaw actuation"
+  },
+  "figSmwCarriage": {
+   "items": [
+    {
+     "src": "media/smw-carriage.mp4",
+     "poster": "media/smw-carriage.jpg",
+     "caption": "Improved front spar actuation",
+     "video": true
+    },
+    {
+     "src": "media/smw-carriage-cad.mp4",
+     "poster": "media/smw-carriage-cad.jpg",
+     "caption": "Front carriage CAD with gear collars",
+     "video": true
+    }
+   ],
+   "src": "media/smw-carriage.mp4",
+   "caption": "Improved front spar actuation"
+  },
+  "figTaxiTailInside": {
+   "src": "media/taxi-tail-inside.jpg",
+   "caption": "Tail mechanism installed in the specimen: feather bracket, pins & servomotor"
+  },
+  "figSmwHero": {
+   "items": [
+    {
+     "src": "media/smw-front-spar-hd.mp4",
+     "poster": "media/smw-front-spar-hd.jpg",
+     "video": true,
+     "caption": "Front VTOL spar tilting between VTOL & conventional"
+    },
+    {
+     "src": "media/smw-hero-inside.jpg",
+     "caption": "Back of VTOL prototype - including 4S battery, rear yaw motor, traditional tail, extended CF rod with clamps for minimal rod deflection"
+    }
+   ],
+   "src": "media/smw-front-spar-hd.mp4",
+   "caption": "Front VTOL spar tilting between hover & cruise"
+  },
+  "figRepME436L": {
+   "items": [
+    {
+     "src": "media/reports/ME436L-01.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-02.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-03.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-04.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-05.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-06.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-07.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-08.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-09.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-10.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    },
+    {
+     "src": "media/reports/ME436L-11.jpg",
+     "caption": "Carbon Fiber Fuselage"
+    }
+   ],
+   "src": "media/reports/ME436L-01.jpg",
+   "caption": "Carbon Fiber Fuselage",
+   "source": "ME 436/L · Composites"
+  },
+  "figRepPump": {
+   "items": [
+    {
+     "src": "media/reports/Pump-01.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-02.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-03.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-04.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-05.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-06.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-07.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-08.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-09.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-10.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-11.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-12.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-13.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-14.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-15.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-16.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-17.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-18.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    },
+    {
+     "src": "media/reports/Pump-19.jpg",
+     "caption": "Centrifugal Pump Experiment"
+    }
+   ],
+   "src": "media/reports/Pump-01.jpg",
+   "caption": "Centrifugal Pump Experiment",
+   "source": "ME 491 · Thermal-Fluids Lab"
+  },
+  "figRepME330": {
+   "items": [
+    {
+     "src": "media/reports/ME330-01.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-02.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-03.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-04.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-05.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-06.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-07.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-08.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-09.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-10.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-11.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-12.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-13.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-14.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-15.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-16.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-17.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-18.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-19.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-20.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-21.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-22.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-23.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-24.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-25.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-26.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-27.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-28.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-29.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-30.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-31.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-32.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-33.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-34.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-35.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-36.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-37.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-38.jpg",
+     "caption": "Portable Pool Lift"
+    },
+    {
+     "src": "media/reports/ME330-39.jpg",
+     "caption": "Portable Pool Lift"
+    }
+   ],
+   "src": "media/reports/ME330-01.jpg",
+   "caption": "Portable Pool Lift",
+   "source": "ME 330 · Machine Design"
+  },
+  "figRepME386L": {
+   "items": [
+    {
+     "src": "media/reports/ME386L-01.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-02.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-03.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-04.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-05.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-06.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-07.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-08.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-09.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-10.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-11.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-12.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-13.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-14.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-15.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-16.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-17.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-18.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-19.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-20.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-21.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    },
+    {
+     "src": "media/reports/ME386L-22.jpg",
+     "caption": "FEA vs. Experiment: 3D Printed Drone Frame"
+    }
+   ],
+   "src": "media/reports/ME386L-01.jpg",
+   "caption": "FEA vs. Experiment: 3D Printed Drone Frame",
+   "source": "ME 386/L · Computer-Aided Analysis & Design"
+  },
+  "figSmwThrustGraphs": {
+   "items": [
+    {
+     "src": "media/smw-thrust-2807.jpg",
+     "caption": "TSIDO 2807 1300KV: thrust vs. time on 3S, 4S, 5S & 6S batteries"
+    },
+    {
+     "src": "media/smw-thrust-data.jpg",
+     "caption": "2215 KV motor: thrust vs. time for 3 propellers"
+    }
+   ],
+   "src": "media/smw-thrust-2807.jpg",
+   "caption": "TSIDO 2807 1300KV: thrust vs. time on 3S, 4S, 5S & 6S batteries"
+  },
+  "figSmwSparTilt": {
+   "src": "media/smw-spar-tilt.mp4",
+   "poster": "media/smw-spar-tilt.jpg",
+   "video": true,
+   "caption": "Front carriage: servo & 3:4 gear reduction rotating the front spar"
+  },
+  "figInBoard": {
+   "src": "media/intern-board.jpg",
+   "caption": "Control board with two Arduino Nanos, a relay & a voltage regulator"
+  },
+  "figInBoardRun": {
+   "src": "media/intern-board.mp4",
+   "poster": "media/intern-board-run.jpg",
+   "video": true,
+   "caption": "Control board powered up, with the relay indicator switching"
+  },
+  "figInBoardBack": {
+   "src": "media/intern-board-back.jpg",
+   "caption": "Point-to-point wiring on the back of the board"
+  },
+  "figInBox": {
+   "src": "media/intern-enclosure.jpg",
+   "caption": "Control enclosure with the power supply & stepper drivers"
+  }
+ },
+ "avionics": {
+  "items": [
+   {
+    "name": "Matek F405 Wing V2 Flight Controller",
+    "kind": "core",
+    "side": "center",
+    "attach": "",
+    "text": "Central processing unit of the aircraft\nBuilt-in gyroscope, accelerometer, and barometer collect flight data\nRuns ArduPilot firmware\nFull wiring layout in the [[avionics diagram|figAvDiagram]]",
+    "photos": []
+   },
+   {
+    "name": "Right Wing Servo",
+    "kind": "actuator",
+    "side": "left",
+    "attach": "",
+    "text": "MKS HV6150H that drives asymmetric tucking of the right wing\nWing tucking replaces aileron control for roll",
+    "photos": [],
+    "link": "PWM",
+    "flow": "out"
+   },
+   {
+    "name": "Left Wing Servo",
+    "kind": "actuator",
+    "side": "left",
+    "attach": "",
+    "text": "MKS HV6150H that drives asymmetric tucking of the left wing",
+    "photos": [],
+    "link": "PWM",
+    "flow": "out"
+   },
+   {
+    "name": "Tail Pitch Servo",
+    "kind": "actuator",
+    "side": "left",
+    "attach": "",
+    "text": "MKS HV6150H that pitches the tail through a steel pushrod",
+    "photos": [],
+    "link": "PWM",
+    "flow": "out"
+   },
+   {
+    "name": "Tail Roll Servo",
+    "kind": "actuator",
+    "side": "left",
+    "attach": "",
+    "text": "Corona DS-843MG that rolls the tail through the carbon fiber twist rod\nTail tilting replaces rudder control",
+    "photos": [],
+    "link": "PWM",
+    "flow": "out"
+   },
+   {
+    "name": "Tail Sweep Servo",
+    "kind": "actuator",
+    "side": "left",
+    "attach": "",
+    "text": "Corona DS-843MG that spreads and tucks the tail feathers through a guitar wire",
+    "photos": [],
+    "link": "PWM",
+    "flow": "out"
+   },
+   {
+    "name": "FrSky X8R Receiver",
+    "kind": "radio",
+    "side": "right",
+    "attach": "",
+    "text": "Receives pilot commands from the Taranis QX7 transmitter",
+    "photos": [],
+    "link": "SBUS",
+    "flow": "in"
+   },
+   {
+    "name": "Matek GPS & Compass",
+    "kind": "sensor",
+    "side": "right",
+    "attach": "",
+    "text": "Provides position and heading to the flight controller",
+    "photos": [],
+    "link": "UART",
+    "flow": "in"
+   },
+   {
+    "name": "ESP32 Telemetry",
+    "kind": "radio",
+    "side": "right",
+    "attach": "",
+    "text": "Wi-Fi telemetry link between the aircraft and the Mission Planner ground station",
+    "photos": [],
+    "link": "MAVLink",
+    "flow": "both"
+   },
+   {
+    "name": "1250 kV Brushless Motor",
+    "kind": "power",
+    "side": "bottom",
+    "attach": "Speed Controller",
+    "text": "E-flite Power 25 outrunner driving an APC 11 × 5.5 propeller",
+    "photos": [],
+    "link": "3-phase",
+    "flow": "out"
+   },
+   {
+    "name": "Electronic Speed Controller",
+    "kind": "power",
+    "side": "bottom",
+    "attach": "",
+    "text": "FlyDragon 60A ESC that drives the motor\nIntegrated 5 A BEC powers the flight electronics",
+    "photos": [],
+    "link": "PWM",
+    "flow": "out"
+   },
+   {
+    "name": "11.1 V LiPo Battery",
+    "kind": "power",
+    "side": "bottom",
+    "attach": "",
+    "text": "3S, 3.0 Ah lithium-polymer pack",
+    "photos": [],
+    "link": "11.1 V",
+    "flow": "in"
+   },
+   {
+    "name": "Taranis QX7 Transmitter",
+    "kind": "ground",
+    "side": "ground",
+    "attach": "Receiver",
+    "text": "Manual and fly-by-wire control of the aircraft\nControls remapped for morphing: wing tucking replaces aileron, tail tilting replaces rudder\n    See the [[transmitter control layout|figTxConfig]]",
+    "photos": [],
+    "link": "2.4 GHz",
+    "flow": "in"
+   },
+   {
+    "name": "Mission Planner Ground Station",
+    "kind": "ground",
+    "side": "ground",
+    "attach": "ESP32",
+    "text": "Mission Planner 1.3.83 for ground monitoring and mission management\nConnects to the aircraft over Wi-Fi through the ESP32",
+    "photos": [],
+    "link": "Wi-Fi",
+    "flow": "both"
+   },
+   {
+    "name": "ArduPilot Firmware",
+    "kind": "software",
+    "side": "software",
+    "attach": "",
+    "text": "Flight control firmware running on the Matek F405 Wing V2",
+    "photos": []
+   },
+   {
+    "name": "ESP32 Thrust Stand Dashboard",
+    "kind": "software",
+    "side": "software",
+    "attach": "",
+    "text": "Web dashboard served by an ESP32 for [[static thrust testing|figThrust]]\nLive thrust in g, N, and lbf with max-thrust tracking\nCalibration, CSV export, and a theoretical thrust overlay"
+   }
+  ]
+ },
+ "research": {
+  "title": "Morphing Red-Tailed Hawk Taxidermy",
+  "intro": "The first morphing taxidermy of a red-tailed hawk: the bird's real skin and feathers over 3D-printed morphing mechanisms. Each wing tucks and extends independently, and the tail pitches, rolls, and spreads its feathers, giving future aerodynamic and ecological studies a realistic bird without live-bird testing.",
+  "link": "https://doi.org/10.3390/biomimetics11080559",
+  "hero": null,
+  "specs": [
+   {
+    "label": "Specimen wingspan",
+    "value": "114.3 cm"
+   },
+   {
+    "label": "Specimen mass",
+    "value": "872 g"
+   },
+   {
+    "label": "Morphing DOF",
+    "value": "5"
+   },
+   {
+    "label": "Wrist angle",
+    "value": "90° ↔ 145°"
+   },
+   {
+    "label": "Tail pitch",
+    "value": "±30°"
+   },
+   {
+    "label": "Tail spread",
+    "value": "60°–120°"
+   },
+   {
+    "label": "Actuation cycles tested",
+    "value": "10"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "Wing morphing mechanism",
+    "text": "One degree of freedom per wing, each driven by an MKS HV6150 servomotor\nThe servo arm extends the ulna through a 2 mm steel rod\n    A fishing-line link drives the rest of the wing while taking up almost no space inside the skin\n[[Measured wrist angle|figTaxiWing]] at full extension: 145.95° and 145.60° against a 145° target"
+   },
+   {
+    "heading": "Tail mechanism",
+    "text": "Three degrees of freedom: [[pitch, roll, and feather expansion|figTaxiTailInside]], each driven by a DS-843MG servomotor\nOrthodontic rubber bands link neighboring feathers like elastic tendons\n    A guitar string routed through PTFE tubing pulls the outer feathers to spread the tail\nReached [[30° pitch up and down|figTaxiPitch]] and a [[60°–120° feather spread|figTaxiSpread]] in testing"
+   },
+   {
+    "heading": "Integration into the taxidermy",
+    "text": "[[Feathers and skin were carefully removed|figExtract]] from the carcass and re-attached to the [[3D-printed mechanisms|figTaxiAssembly]]\nSwimwear fabric sewn to the skin and Velcro strips let the skin wrap the mechanisms without tearing\nA skull connector and neck structure hold the bird's real head\n[[All mechanisms held their positions|figTaxiFull]] over 10 actuation cycles with the skin and sutures intact"
+   },
+   {
+    "heading": "Current work: next-generation redesign",
+    "text": "Adding tail sweep and wing pitch to the morphing taxidermy",
+    "photos": []
+   }
+  ],
+  "role": "What you designed, built, or tested on this project.",
+  "model": "taxi-model.txt",
+  "parts": {
+   "humerusR": {
+    "name": "Right Humerus",
+    "text": "3D printed PLA humerus, modeled in SOLIDWORKS using digitized bone profiles\nActuated by the wing servomotor through a PLA rod, forming a [[4-bar mechanism|figKinematic]]\n    The humerus extends until the 4-bar mechanism reaches its dead-center position\nA braided fishing line runs through channels along its upper surface, acting as both a radius & bicep muscle"
+   },
+   "humerusL": {
+    "name": "Left Humerus",
+    "text": "3D printed PLA humerus, modeled in SOLIDWORKS using digitized bone profiles\nActuated by the wing servomotor through a PLA rod, forming a [[4-bar mechanism|figKinematic]]\n    The humerus extends until the 4-bar mechanism reaches its dead-center position\nA braided fishing line runs through channels along its upper surface, acting as both a radius & bicep muscle"
+   },
+   "ulnaR": {
+    "name": "Right Ulna",
+    "text": "3D printed PLA ulna, combining the ulna & radius into one bone so the mechanism fits inside the drying skin\nExtended by a 2 [mm] steel rod connected to the wing servo arm\n20° twisted housing at the wrist joint allows the metacarpus & primaries to tuck beneath the mid-wing\nHoles near the elbow & wrist joints secure the skin using sewing pins & earring backings"
+   },
+   "ulnaL": {
+    "name": "Left Ulna",
+    "text": "3D printed PLA ulna, combining the ulna & radius into one bone so the mechanism fits inside the drying skin\nExtended by a 2 [mm] steel rod connected to the wing servo arm\n20° twisted housing at the wrist joint allows the metacarpus & primaries to tuck beneath the mid-wing\nHoles near the elbow & wrist joints secure the skin using sewing pins & earring backings"
+   },
+   "metaR": {
+    "name": "Right Metacarpus",
+    "text": "3D printed PLA metacarpus\nPulled into full extension by the braided fishing line tied between the metacarpus & humerus\n    Removes the need for a radius, adding a link at minimal cost to space inside the skin\nOrthodontic rubber bands pull the metacarpus back down as the wing tucks\nThe five digit feathers are mounted directly to the metacarpus with no ability to rotate"
+   },
+   "metaL": {
+    "name": "Left Metacarpus",
+    "text": "3D printed PLA metacarpus\nPulled into full extension by the braided fishing line tied between the metacarpus & humerus\n    Removes the need for a radius, adding a link at minimal cost to space inside the skin\nOrthodontic rubber bands pull the metacarpus back down as the wing tucks\nThe five digit feathers are mounted directly to the metacarpus with no ability to rotate"
+   },
+   "linkR": {
+    "name": "Right Wing Actuation Linkage",
+    "text": "MKS HV6150 servomotor arm housed within the fuselage, driving two actuation rods\n    PLA rod connects to the outer end of the humerus, forming a 4-bar mechanism\n    2 [mm] steel rod connects the most distal point on the servo arm to the proximal point on the ulna\nAs the servo arm rotates, the humerus & ulna extend together to open the wing"
+   },
+   "linkL": {
+    "name": "Left Wing Actuation Linkage",
+    "text": "MKS HV6150 servomotor arm housed within the fuselage, driving two actuation rods\n    PLA rod connects to the outer end of the humerus, forming a 4-bar mechanism\n    2 [mm] steel rod connects the most distal point on the servo arm to the proximal point on the ulna\nAs the servo arm rotates counterclockwise, the humerus & ulna extend together to open the wing"
+   },
+   "pinsR": {
+    "name": "Right Wing Feather Pins",
+    "text": "3D printed PLA feather pins positioned along the dorsal side of the wing\nSecured to the wing bones using sewing pins & earring backings\nEach flight feather & its coverts are attached to a pin using glue & heat shrink\nFlight feathers are interconnected via orthodontic rubber bands, acting as the postpatagium"
+   },
+   "pinsL": {
+    "name": "Left Wing Feather Pins",
+    "text": "3D printed PLA feather pins positioned along the dorsal side of the wing\nSecured to the wing bones using sewing pins & earring backings\nEach flight feather & its coverts are attached to a pin using glue & heat shrink\nFlight feathers are interconnected via orthodontic rubber bands, acting as the postpatagium"
+   },
+   "tailBracket": {
+    "name": "Tail Feather Bracket",
+    "text": "3D printed PLA bracket [[supporting all twelve tail feathers|figTailAsm]]\nDesigned using Autodesk Fusion's generative design, based on dimensions measured from the hawk\n    Attachment points to the roll rod set as fixed constraints, with loads applied at the feather pins & pitch pivot\nIntegrated PTFE tubing routes the guitar string used for tail feather expansion"
+   },
+   "tailPins": {
+    "name": "Tail Feather Pins",
+    "text": "3D printed PLA pins, each with a [[tail feather superglued & heat-shrunk onto it|figTaxiTailInside]]\nAttached to the feather bracket using sewing pins & earring backings, allowing each feather to move laterally\nAdjacent feathers are linked with orthodontic rubber bands, mimicking elastic tendons\nGuitar string attached to the outer feather pins spreads the tail from fully tucked to 120°"
+   },
+   "pitchBracket": {
+    "name": "Pitching Servomotor Bracket",
+    "text": "3D printed PLA bracket housing the tail pitching DS-843MG servomotor\nConnected to the tail feather bracket through a brass rod, which serves as the pitch pivot\nThe servomotor drives a pushrod to the feather bracket, pitching the tail 30° up & down"
+   },
+   "rollRod": {
+    "name": "Tail Roll Rod",
+    "text": "6 [mm] carbon fiber rod passing through the fuselage\nBonded to the pitching servomotor bracket at one end\nThe tail rolling DS-843MG servomotor is mounted to the opposite end using M2 bolts\nSupports the feather expansion servomotor bracket along its length"
+   },
+   "expBracket": {
+    "name": "Feather Expansion Servomotor Bracket",
+    "text": "3D printed PLA bracket housing the tail feather expansion DS-843MG servomotor\nC-clamp design slides along the roll rod for positioning, then tightens securely in place"
+   },
+   "rollMount": {
+    "name": "Tail Roll Rod Connector",
+    "text": "3D printed piece connecting the front end of the roll rod to the tail roll servomotor"
+   },
+   "body": {
+    "name": "Fuselage",
+    "text": "3D printed PLA fuselage, the central structure connecting the wings, neck, & tail assemblies\nModeled around a [[3D scan of the hawk's interior skeleton|figTaxiScan]], maintaining its primary dimensions\n    Hollow internal structure with mounting features for the tail roll rod, both wing servomotors, & the neck\n    Bottom portion sliced to account for skin shrinkage after drying\nCovered with stretchy fabric & Velcro to prevent the skin from tearing as the mechanisms actuate"
+   },
+   "neck": {
+    "name": "Neck & Skull Connector",
+    "text": "3D printed PLA cylinder mimicking the hawk's neck, with a ball joint connecting it to the fuselage\n    The ball joint allows the neck to take any orientation needed for flight studies\n    A PLA pin through the ball joint restricts motion to the lateral direction\n[[Skull connector|figNeck]] attaches the hawk's real skull to the neck using M2 screws & nuts\nNeck orientation is adjusted manually, without servomotors, to keep weight to a minimum"
+   },
+   "servoR": {
+    "name": "Right Wing Servomotor",
+    "text": "MKS HV6150 servomotor housed within the fuselage for wing morphing actuation\nServo arm drives the PLA humerus rod & the 2 [mm] steel ulna rod\nOne servomotor per wing, allowing each wing to tuck & extend independently"
+   },
+   "servoL": {
+    "name": "Left Wing Servomotor",
+    "text": "MKS HV6150 servomotor housed within the fuselage for wing morphing actuation\nServo arm drives the PLA humerus rod & the 2 [mm] steel ulna rod\nOne servomotor per wing, allowing each wing to tuck & extend independently"
+   },
+   "servoPitch": {
+    "name": "Tail Pitching Servomotor",
+    "text": "DS-843MG servomotor housed within the pitching servomotor bracket\nDrives a pushrod to the tail feather bracket, pitching the tail 30° up & down"
+   },
+   "servoExp": {
+    "name": "Tail Feather Expansion Servomotor",
+    "text": "DS-843MG servomotor responsible for tail feather expansion & contraction\nPulls the guitar string routed to the outer tail feather pins\nHoused in the feather expansion servomotor bracket, which slides along the roll rod"
+   },
+   "servoRoll": {
+    "name": "Tail Roll Servomotor",
+    "text": "DS-843MG servomotor responsible for rolling the tail\nMounted to the front end of the roll rod using M2 bolts"
+   }
+  }
+ },
+ "resume": {
+  "title": "Résumé",
+  "image": "media/resume.jpg",
+  "pdf": "media/resume.pdf"
+ },
+ "smw": {
+  "model": "smw-vtol-model.txt",
+  "parts": {
+   "battery": {
+    "name": "4S LiPo Battery",
+    "text": "4S LiPo pack, chosen from [[thrust test results|figSmwThrustGraphs]]\nHangs under the chassis near the center of gravity\n0.389 [lbs] measured pack weight"
+   },
+   "batteryMount": {
+    "name": "Battery Mount",
+    "text": "3D printed tray hanging from both chassis spars\nClamp rings wrap each 15.5 [mm] spar, no drilling\nSide lips locate the pack so it can't shift in flight"
+   },
+   "batteryStraps": {
+    "name": "Battery Straps",
+    "text": "2 velcro straps loop through the tray & around the pack"
+   },
+   "escL": {
+    "name": "ESC, Front Left",
+    "text": "30 [A] ESC - one end connected to flight controller, other end plugged into the front, left motor"
+   },
+   "escR": {
+    "name": "ESC, Front Right",
+    "text": "30 [A] ESC - one end connected to flight controller, other end plugged into the front, right motor"
+   },
+   "escRear": {
+    "name": "ESC, Rear",
+    "text": "30 [A] ESC - one end connected to flight controller, other end plugged into the rear motor"
+   },
+   "escMount": {
+    "name": "ESC Mount",
+    "text": "3D printed tray holding all 3 ESCs side by side under the chassis\nDividers give each ESC its own bay\nSame clamp-ring attachment as the battery mount\nAft of the center bracket, apart from the battery"
+   },
+   "escTies": {
+    "name": "Zip Ties",
+    "text": "Hold each ESC against the mount"
+   },
+   "powerLeads": {
+    "name": "Power Leads",
+    "text": "Battery leads & XT60 connector\nESC power leads run forward to the battery, motor leads run aft"
+   },
+   "sparL": {
+    "name": "Chassis Spar (L)",
+    "text": "15.5 [mm] carbon fiber rod running along the fuselage\nOne of 2 parallel spars forming the chassis\nCarries the cross brackets, battery mount & ESC mount"
+   },
+   "sparR": {
+    "name": "Chassis Spar (R)",
+    "text": "15.5 [mm] carbon fiber rod running along the fuselage\nOne of 2 parallel spars forming the chassis\nIncorporated 2 spars to decrease the torsional effects created by the motors on the front spar\n    The couplers act as mounting points and to stiffen up the spars simultanenously\nCarries the cross brackets, battery mount & ESC mount"
+   },
+   "tailBoom": {
+    "name": "Tail Boom",
+    "text": "15.5 [mm] carbon fiber rod carrying the rear yaw system & tail"
+   },
+   "crossFront": {
+    "name": "Front Cross Bracket / Wing Saddle",
+    "text": "3D printed bracket tying the 2 chassis spars together\nBolted through both spars\nThe traditional wing sits on top & is strapped down with elastic bands"
+   },
+   "crossRear": {
+    "name": "Rear Cross Bracket / Wing Saddle",
+    "text": "3D printed bracket tying the 2 chassis spars together & holding the tail boom\nBolted through both spars\nThe traditional wing sits on top & is strapped down with elastic bands"
+   },
+   "centerBracket": {
+    "name": "Center Bracket",
+    "text": "3D printed bracket tying the 2 chassis spars together at mid-chassis"
+   },
+   "fcMount": {
+    "name": "Flight Controller Mount",
+    "text": "Mounting plate under the center bracket"
+   },
+   "frontSpar": {
+    "name": "Front VTOL Spar",
+    "text": "15.5 [mm] carbon fiber rod with a motor mount at each end\n[[Tilts 90° from hover to cruise|figSmwSparTilt]]\n  Both motors always hold the same commanded tilt angle"
+   },
+   "motorMountL": {
+    "name": "Motor Mount (L)",
+    "text": "3D printed clamp & angled motor plate at the end of the front spar\nTilts with the spar from hover to cruise"
+   },
+   "motorMountR": {
+    "name": "Motor Mount (R)",
+    "text": "3D printed clamp & angled motor plate at the end of the front spar\nTilts with the spar from hover to cruise"
+   },
+   "carriage": {
+    "name": "Front Carriage",
+    "text": "Holds the tilting front spar & its drive servo\nScrew-together, modular design\n  Gears can be re-meshed & the servo mount moved as needed"
+   },
+   "tiltServo": {
+    "name": "Tilt Servo",
+    "text": "Drives the front spar tilt through the gear train\nDS-843MG tested to 1.15 [kg·cm] against a 1.11 [kg·cm] requirement"
+   },
+   "gears": {
+    "name": "Concentric Gear Train",
+    "text": "3:4 gear ratio between the servo & the spar\nSlows the spar rotation & increases torque"
+   },
+   "collars": {
+    "name": "Gear Collars",
+    "text": "Collars on the front spar keep it from sliding sideways"
+   },
+   "rearMotor": {
+    "name": "Rear Motor",
+    "text": "TSIDO 2807 1300KV brushless motor\nProvides lift & yaw control in hover\n  Servo-driven tilt redirects its thrust to create a yaw moment"
+   },
+   "rearYawMount": {
+    "name": "Rear Yaw Mount",
+    "text": "Holds the rear motor on a servo-driven pivot\nFully modular design for easy assembly.\nBall bearings & carbon fiber rod used for minimal friction during actuation\nClamps directly onto rear carbon fiber spar for quick installation and replacement\nFEA at an 11 [N] load: 0.355 [MPa] max stress, min FOS 58.8"
+   },
+   "yawLinkage": {
+    "name": "Yaw Linkage",
+    "text": "Servo arm & pushrod tilting the rear motor"
+   },
+   "wing": {
+    "name": "Wing",
+    "text": "Wing sitting on top of the carbon fiber chassis"
+   },
+   "tail": {
+    "name": "Tail",
+    "text": "Horizontal tail with twin vertical fins"
+   },
+   "motorL": {
+    "name": "Front Motor (L)",
+    "text": "TSIDO 2807 1300KV brushless motor\n[[2.58 [lbs] max thrust on a 4S battery|figSmwThrustGraphs]]\nPicked from load-cell thrust testing"
+   },
+   "motorR": {
+    "name": "Front Motor (R)",
+    "text": "TSIDO 2807 1300KV brushless motor\n[[2.58 [lbs] max thrust on a 4S battery|figSmwThrustGraphs]]\nPicked from load-cell thrust testing"
+   },
+   "propL": {
+    "name": "Front Propeller (L)",
+    "text": "7 [in] 3-blade propeller"
+   },
+   "propR": {
+    "name": "Front Propeller (R)",
+    "text": "7 [in] 3-blade propeller"
+   },
+   "propRear": {
+    "name": "Rear Propeller",
+    "text": "7 [in] 3-blade propeller"
+   },
+   "rearMotorMount": {
+    "name": "Rear Motor Mount",
+    "text": "Motor plate on top of the rear yaw pivot\nTilts with the yaw servo to vector the rear thrust"
+   },
+   "tailServo": {
+    "name": "Tail Servo",
+    "text": "Servo mounted on the tail"
+   },
+   "tailClamps": {
+    "name": "Tail Clamps",
+    "text": "Clamp the tail to the tail boom"
+   }
+  }
+ },
+ "program": {
+  "name": "Smart Morphing Wing program",
+  "stages": [
+   {
+    "cohort": "10th Cohort",
+    "project": "SMART Hawk",
+    "years": "2025–2026",
+    "role": "Avionics subteam co-lead",
+    "note": "",
+    "tab": "sd-top"
+   },
+   {
+    "cohort": "11th Cohort",
+    "project": "SMART Hawk 2.0: VTOL & Payload",
+    "years": "2026–2027",
+    "role": "Avionics subteam",
+    "note": "",
+    "tab": "sd-next"
+   }
+  ]
+ },
+ "reports": {
+  "title": "Selected Lab Reports",
+  "intro": "A few reports from my coursework, to show how I write, test & analyze. Read them right here or download the PDF.",
+  "items": [
+   {
+    "course": "ME 436/L · Composites",
+    "title": "Carbon Fiber Fuselage",
+    "meta": "Spring 2026 · Individual report",
+    "text": "Designed & built a carbon fiber fuselage for the **SMART Hawk** using a wet layup\n  3D printed mold coated in Duratec & wet sanded for a smooth surface\n  Vacuum bagged & cured at room temperature for 24 [hrs]\nBuilt 1-, 2- & 3-ply fuselages to compare weight, stiffness & strength\n  24.2, 71.9 & 97.1 [g] respectively\nOnly the 3-ply version could handle flight loads, at over twice the weight of the foamboard fuselage",
+    "cover": "media/reports/rep-ME436L.jpg",
+    "reader": "figRepME436L",
+    "pages": 11,
+    "pdf": "media/reports/ME436L.pdf",
+    "file": "Johnathon_Moore_ME436L_Report.pdf"
+   },
+   {
+    "course": "ME 491 · Thermal-Fluids Lab",
+    "title": "Centrifugal Pump Experiment",
+    "meta": "Summer 2026 · Individual report",
+    "text": "Characterized a centrifugal pump at 1200 & 1600 [RPM] on a PumpLab rig\n  Logged inlet & outlet pressure, flow rate, shaft torque & speed every 2 [s]\nBuilt head, shaft power & efficiency curves, plus dimensionless flow, head & power coefficients\nCompared measured head to the ideal impeller prediction & ran an uncertainty analysis",
+    "cover": "media/reports/rep-Pump.jpg",
+    "reader": "figRepPump",
+    "pages": 19,
+    "pdf": "media/reports/Pump.pdf",
+    "file": "Johnathon_Moore_Pump_Report.pdf"
+   },
+   {
+    "course": "ME 330 · Machine Design",
+    "title": "Portable Pool Lift",
+    "meta": "Fall 2025 · Team report",
+    "text": "Designed a portable, human-powered pool lift for users with limited mobility\n  Hydraulic boom on a 0–90° rotating mast, telescoping anchor rods & HDPE seat\nHand calcs for bending, shear & deflection, then SolidWorks FEA with mesh convergence on every load-bearing part\nEvery component reached a factor of safety ≥ 3 at a 350 [lb] user load in Al 6061-T6",
+    "cover": "media/reports/rep-ME330.jpg",
+    "reader": "figRepME330",
+    "pages": 39,
+    "pdf": "media/reports/ME330.pdf",
+    "file": "Johnathon_Moore_ME330_Report.pdf"
+   },
+   {
+    "course": "ME 386/L · Computer-Aided Analysis & Design",
+    "title": "FEA vs. Experiment: 3D Printed Drone Frame",
+    "meta": "Fall 2025 · Team of 2",
+    "text": "Ran static, nonlinear, modal, harmonic & buckling FEA on a 3D printed PLA drone frame\nValidated each study experimentally\n  Tensile tests measured E = 1050 [MPa], about half the published 2060 [MPa]\n  Scanning laser Doppler vibrometer: modes at 21.9, 67.5, 181.9 & 371.6 [Hz] vs. 27.5, 58.2, 121.3 & 321.5 [Hz] simulated\nExplained the gaps through boundary conditions & real vs. ideal material properties",
+    "cover": "media/reports/rep-ME386L.jpg",
+    "reader": "figRepME386L",
+    "pages": 22,
+    "pdf": "media/reports/ME386L.pdf",
+    "file": "Johnathon_Moore_ME386L_Report.pdf"
+   }
+  ]
+ }
+}
